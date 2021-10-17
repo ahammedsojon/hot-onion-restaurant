@@ -1,0 +1,20 @@
+.foods{
+    padding: 60px 0 0;
+}
+.foods .food-item{
+    border: none;
+    background-color: transparent;
+}
+.foods .food-item:hover{
+   color: red;
+}
+.foods .food-item:focus{
+    color: red;
+    font-weight: bold;
+    border-bottom: 2px solid red;
+}
+.food-item.active{
+    color: red;
+    font-weight: bold;
+    border-bottom: 2px solid red;
+}

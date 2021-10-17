@@ -1,0 +1,8 @@
+.food{
+    padding: 10px 0;
+}
+.food:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    cursor: pointer;
+    border-radius: 10px;
+}

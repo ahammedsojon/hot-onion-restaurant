@@ -1,0 +1,7 @@
+.login{
+    background: url('../../../images/bannerbackground.png') no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 60px;
+    min-height: 70vh;
+}
