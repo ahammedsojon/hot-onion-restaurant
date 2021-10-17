@@ -16,11 +16,13 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 history.push(redirect_uri);
+                console.log(user)
             })
             .catch((error) => {
                 setError(error.message);
                 console.log(error)
             }).finally(() => {
+                setIsLoading(false);
                 error === 'Firebase: Error (auth/user-not-found).' &&
                     history.push('/register');
             })
@@ -31,6 +33,8 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 setError('');
+            }).catch((error) => {
+                console.log(error.message);
             }).finally(() => {
                 setIsLoading(false);
             })
@@ -42,6 +46,8 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 setError('');
+            }).catch((error) => {
+                console.log(error.message);
             }).finally(() => {
                 setIsLoading(false);
             })
@@ -52,6 +58,8 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 setError('');
+            }).catch((error) => {
+                console.log(error.message);
             }).finally(() => {
                 setIsLoading(false);
             })
@@ -82,7 +90,7 @@ const Login = () => {
                     </div>
                 </Form>
                 <div className="my-4 d-flex justify-content-around align-items-center">
-                    <img onClick={handleGoogleSignIn} style={styleImg} width="40px" className="mw-100" src="https://cdn-icons.flaticon.com/png/512/720/premium/720255.png?token=exp=1634368619~hmac=8703ac8e93725c799023fb21770fab26" alt="" />
+                    <img onClick={handleGoogleSignIn} style={styleImg} width="40px" className="mw-100" src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="" />
                     <img onClick={handleGithubSignIn} style={styleImg} width="40px" className="mw-100" src="https://cdn-icons-png.flaticon.com/512/889/889111.png" alt="" />
                     <img onClick={handleFacebookSignIn} style={styleImg} width="40px" className="mw-100" src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="" />
                 </div>

@@ -55,7 +55,7 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubrscribed;
-    }, [])
+    }, [user.displayName])
 
     const handleEmailChange = e => {
         setEmail(e.target.value)
@@ -71,7 +71,6 @@ const useFirebase = () => {
 
     const handleImageChange = e => {
         setImage(e.target.value);
-        console.log(e.target.value)
     }
 
     const processSignUp = (email, password) => {
@@ -84,6 +83,7 @@ const useFirebase = () => {
     }
 
     const updateUser = (name, image) => {
+        setIsLoading(true)
         updateProfile(auth.currentUser, { displayName: name, photoURL: image })
             .then(() => {
                 // Profile updated!
@@ -91,7 +91,7 @@ const useFirebase = () => {
             }).catch((error) => {
                 // An error occurred
                 // ...
-            });
+            }).finally(() => setIsLoading(false))
     }
 
     const verifyEmail = () => {

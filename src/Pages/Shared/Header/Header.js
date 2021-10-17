@@ -6,9 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 const Header = () => {
     const { user, logOut, isLoading } = useAuth();
     if (isLoading) {
-        return <div className="text-center">
-            <Spinner animation="border" />
-        </div>
+        return <></>;
     }
     return (
         <>
@@ -25,8 +23,8 @@ const Header = () => {
                             </Nav.Link>
                             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                             {
-                                user.email && <>
-                                    <small className="ms-4 me-2 text-danger">Hello, {user.displayName}</small>
+                                user?.email && <>
+                                    <small className="ms-4 me-2 text-danger">Hello, {user?.displayName}</small>
                                     <img width="50px" className="rounded-circle  mx-2" src={user?.photoURL} alt="" />
                                 </>
                             }

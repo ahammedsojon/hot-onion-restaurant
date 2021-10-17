@@ -14,7 +14,6 @@ const Cart = () => {
                     <CartDetails></CartDetails>
                 </Row>
             </Container>
-
         </div>
     );
 };

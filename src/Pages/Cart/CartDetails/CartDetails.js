@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Table } from 'react-bootstrap';
-import './CardDetails.css';
+
 const CartDetails = () => {
     return (
         <Col xs={12} lg={5} className="ms-auto">

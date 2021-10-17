@@ -5,7 +5,7 @@ import Logo from '../../../images/logo2.png';
 import useAuth from '../../../hooks/useAuth';
 const Register = () => {
     const history = useHistory();
-    const { processSignUp, handleEmailChange, handlePasswordChange, email, password, handleNameChange, name, updateUser, image, handleImageChange, verifyEmail, setUser, error, setError, user } = useAuth()
+    const { processSignUp, handleEmailChange, handlePasswordChange, email, password, handleNameChange, name, updateUser, image, handleImageChange, verifyEmail, error, setError, setIsLoading } = useAuth()
     const handleRegister = e => {
         e.preventDefault();
         setError('');
@@ -18,6 +18,8 @@ const Register = () => {
             })
             .catch((error) => {
                 console.log(error.message);
+            }).finally(() => {
+                setIsLoading(false);
             })
     }
     return (
@@ -50,6 +52,7 @@ const Register = () => {
                         <button className="btn btn-danger d-block w-100">Create account</button>
                     </div>
                 </Form>
+                <p>Already have an account? <Link to="/login">Sign in</Link></p>
             </div>
         </div>
     );
