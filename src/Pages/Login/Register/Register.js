@@ -14,7 +14,7 @@ const Register = () => {
                 const user = result.user;
                 updateUser(name, image)
                 verifyEmail();
-                history.push('/');
+                window.location.reload();
             })
             .catch((error) => {
                 console.log(error.message);
@@ -52,7 +52,7 @@ const Register = () => {
                         <button className="btn btn-danger d-block w-100">Create account</button>
                     </div>
                 </Form>
-                <p>Already have an account? <Link to="/login">Sign in</Link></p>
+                <p>Already have an account? <Link className="text-decoration-none" to="/login">Sign in</Link></p>
             </div>
         </div>
     );
